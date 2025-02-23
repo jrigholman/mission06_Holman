@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\data\JoelHiltonMovieCollection.sqlite" />
     <None Include="wwwroot\images\BaconsaleKate.jpg" />
     <None Include="wwwroot\images\joelhilton.jpg.jpg" />
   </ItemGroup>

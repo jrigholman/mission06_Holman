@@ -8,26 +8,25 @@ namespace Mission06_Holman.Models
         public int MovieId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public int? CategoryId { get; set; } // Use CategoryId, not Category
 
         [Required]
-        public string Category { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [Required]
-        public string Director { get; set; }
-
-        [Required]
+        [Range(1888, 2100, ErrorMessage = "Year must be 1888 or later.")]
         public int Year { get; set; }
 
+        public string? Director { get; set; }
+        public string? Rating { get; set; }
+
         [Required]
-        public string Rating { get; set; } // Dropdown: G, PG, PG-13, R
+        public bool Edited { get; set; }
 
-        public bool Edited { get; set; } = false; // Default to false
+        [Required]
+        public bool CopiedToPlex { get; set; }
 
-
-        public string? LentTo { get; set; } // Optional
-
-        [MaxLength(25)]
-        public string? Notes { get; set; } // Optional (Max 25 characters)
+        public string? LentTo { get; set; }
+        public string? Notes { get; set; }
     }
 }

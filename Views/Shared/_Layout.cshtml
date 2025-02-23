@@ -2,54 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mission06</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Mission06.styles.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewData["Title"] - My Movie Collection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
 </head>
-<body>
+<body class="d-flex flex-column h-100 bg-light">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" asp-controller="Home" asp-action="Index">The Joel Hilton Film Collection</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="GetToKnowJoel">Get to Know Joel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Movie" asp-action="Index">Movie Collection</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Movie" asp-action="AddMovie">Add a Movie</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Joel Hilton Movie Collection</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Movie" asp-action="Index">Movies</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="GetToKnowJoel">About Joel</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Mission06 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="m-0">&copy; 2024 Joel Hilton Movie Collection</p>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/scripts.js"></script>
 </body>
 </html>
