@@ -18,14 +18,17 @@ namespace Mission06_Holman.Controllers
         // GET: /Movie/
         public IActionResult Index()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(m => m.Category).ToList();
             return View(movies);
         }
+
 
         // GET: /Movie/AddMovie
         [HttpGet]
         public IActionResult AddMovie()
         {
+            var categories = _context.Categories.ToList(); // Fetch categories from DB
+            ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
             return View();
         }
 
@@ -52,10 +55,13 @@ namespace Mission06_Holman.Controllers
                 return NotFound();
             }
 
-         
+            // Fetch categories from the database
+            var categories = _context.Categories.ToList();
+            ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName", movie.CategoryId);
 
             return View(movie);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
